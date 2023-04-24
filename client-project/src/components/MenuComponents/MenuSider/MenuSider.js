@@ -4,6 +4,8 @@ import {
   HomeOutlined,
   TeamOutlined,
   AppstoreOutlined,
+  BlockOutlined,
+  NotificationOutlined
 } from "@ant-design/icons";
 import { useLocation, useNavigate } from "react-router-dom";
 import "./MenuSider.scss"
@@ -17,12 +19,12 @@ export const MenuSider = (props) => {
     { key: "users", icon: <HomeOutlined />, label: "Gestion de usuarios" },
     {
       key: "products",
-      icon: <TeamOutlined/>,
+      icon: <AppstoreOutlined/>,
       label: "Portafolio de servicios",
     },
     {
       key: "clients",
-      icon: <AppstoreOutlined />,
+      icon: <TeamOutlined />,
       label: "Clientes",
       subMenu: [
         {key: "clients/list", icon: <TeamOutlined/>, label: "Lista de clientes"},
@@ -30,8 +32,17 @@ export const MenuSider = (props) => {
       ],
     },
     {
+      key: "services",
+      icon: <BlockOutlined />,
+      label: "Services",
+      subMenu: [
+        {key: "services/list", icon: <TeamOutlined/>, label: "List"},
+        {key: "services/new", icon: <TeamOutlined/>, label: "New"},
+      ],
+    },
+    {
       key: "news",
-      icon: <AppstoreOutlined />,
+      icon: <NotificationOutlined />,
       label: "Gestion de noticias",
     },
   ];

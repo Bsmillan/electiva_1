@@ -24,8 +24,7 @@ export const GeneralLayout = (props) => {
           />
         </Header>
         <Content className="general-layout__content">{children}</Content>
-        <Footer className="general-layout__footer">
-        </Footer>
+        <Footer className="general-layout__footer"></Footer>
       </Layout>
     </Layout>
   );
