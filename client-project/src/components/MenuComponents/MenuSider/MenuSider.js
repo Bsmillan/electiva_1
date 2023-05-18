@@ -48,7 +48,7 @@ export const MenuSider = (props) => {
   ];
 
   const navigateTo = (e) => {
-    const path = e.key;
+    const path = new URL(e.key, window.location.origin).pathname;
     console.log(path);
     navigate(path);
   };

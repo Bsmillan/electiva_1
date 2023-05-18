@@ -9,20 +9,14 @@
     width: 100%;
     display: flex;
     padding: 0;
-    height: 60px;
-    background-color: #982727;
+    height: 70px;
   }
   &__content{
     min-height: calc(100hv - 65px);
-    padding: 90px 25px 25px 25px;
+    padding: 75px 5px 5px 5px;
   }
   &__footer{
-    text-align: center;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    width: 100%;
-    bottom: 0;
-    position: fixed;
-    background-color: #982727;
+    padding: 0;
   }
 }
 

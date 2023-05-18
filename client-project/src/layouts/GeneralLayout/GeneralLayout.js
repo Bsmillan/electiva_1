@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Layout } from "antd";
 import { MenuSider } from "../../components/MenuComponents/MenuSider/MenuSider";
 import { MenuTop } from "../../components/MenuComponents/MenuTop/MenuTop";
-import { FooterPage } from "../../components/FooterPage";
+import { FooterPage } from "../../components/FooterPage/FooterPage";
 import "./GeneralLayout.scss";
 
 export const GeneralLayout = (props) => {
@@ -13,10 +13,7 @@ export const GeneralLayout = (props) => {
   return (
     <Layout>
       <MenuSider menuCollapsed={menuCollapsed} />
-      <Layout
-        className="general-layout"
-        style={{ marginLeft: menuCollapsed ? "80px" : "200px" }}
-      >
+      <Layout className="general-layout">
         <Header className="general-layout__header">
           <MenuTop
             menuCollapsed={menuCollapsed}
@@ -24,7 +21,9 @@ export const GeneralLayout = (props) => {
           />
         </Header>
         <Content className="general-layout__content">{children}</Content>
-        <Footer className="general-layout__footer"></Footer>
+        <Footer className="general-layout__footer">
+          <FooterPage></FooterPage>
+        </Footer>
       </Layout>
     </Layout>
   );
