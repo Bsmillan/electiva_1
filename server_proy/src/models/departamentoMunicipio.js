@@ -4,6 +4,7 @@ const departamentoMunicipioShcema = new Schema({
   departamento: String,
   municipio: String,
 });
+
 module.exports = mongoose.model(
   "DepartamentoMunicipio",
   departamentoMunicipioShcema

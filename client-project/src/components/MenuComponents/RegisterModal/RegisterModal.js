@@ -4,14 +4,14 @@ import RegisterForm from '../Register/Register';
 import "./RegisterModal.scss";
 
 const RegisterModal = () => {
-  const [visible, setVisible] = useState(false);
+  const [open, setopen] = useState(false);
 
   const showModal = () => {
-    setVisible(true);
+    setopen(true);
   };
 
   const handleCancel = () => {
-    setVisible(false);
+    setopen(false);
   };
 
   return (
@@ -21,7 +21,7 @@ const RegisterModal = () => {
       </Button>
       <Modal
         title="Register"
-        visible={visible}
+        open={open}
         onCancel={handleCancel}
         footer={null}
       >

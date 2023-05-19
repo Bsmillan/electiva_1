@@ -6,7 +6,7 @@ import { FooterPage } from "../../components/FooterPage/FooterPage";
 import "./GeneralLayout.scss";
 
 export const GeneralLayout = (props) => {
-  const { children } = props;
+  const { items } = props;
   const [menuCollapsed, setMenuCollapsed] = useState(false);
   const { Header, Footer, Content } = Layout;
 
@@ -20,7 +20,7 @@ export const GeneralLayout = (props) => {
             setMenuCollapsed={setMenuCollapsed}
           />
         </Header>
-        <Content className="general-layout__content">{children}</Content>
+        <Content className="general-layout__content">{items}</Content>
         <Footer className="general-layout__footer">
           <FooterPage></FooterPage>
         </Footer>

@@ -4,14 +4,14 @@ import LoginForm from '../Login/Login';
 import "./LoginModal.scss";
 
 const LoginModal = () => {
-  const [visible, setVisible] = useState(false);
+  const [visible, setvisible] = useState(false);
 
   const showModal = () => {
-    setVisible(true);
+    setvisible(true);
   };
 
   const handleCancel = () => {
-    setVisible(false);
+    setvisible(false);
   };
 
   return (

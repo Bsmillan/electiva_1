@@ -20,30 +20,33 @@ const uploadData = async (req, res, next) => {
   }
 }
 
-const listData = async (req, res) => {
-  try {
-    const data = await departamentoMunicipioModel.find();
-    const municipios = await data.map()
-    res.status(200).send(data);
-  } catch (error) {
-    console.log("Error al traer los datos", error);
-    res.status(500).send("Error al traer los datos");
-  }
-}
-
-const listmp = async (req, res) => {
+const listdpmp = async (req, res) => {
   try {
     const departamento = req.query.departamento;
-    const data = await departamentoMunicipioModel.find({ departamento: departamento });
-    res.status(200).send(data);
+    let query = {};
+    if (departamento) {
+      query.departamento = departamento;
+    }
+
+    const data = await departamentoMunicipioModel.aggregate([
+      {
+        $group: {
+          _id: "$departamento",
+          municipios: {
+            $push: "$municipio"
+          }
+        }
+      }
+    ]);
+
+    res.send(data);
   } catch (error) {
-    console.log("Error al traer los datos", error);
-    res.status(500).send("Error al traer los datos");
+    console.log("error accediendo a la base de datos", error);
+    res.status(500).send("Error al acceder a la base de datos");
   }
 }
 
 module.exports = {
   uploadData,
-  listData,
-  listmp
+  listdpmp
 }
