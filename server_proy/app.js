@@ -7,6 +7,8 @@ const app = express();
 /*cargar rutas*/
 const authRoutes = require('./src/routes/auth');
 const deptoMpioRoutes = require('./src/routes/departamentoMunicipio');
+const categories = require("./src/routes/category");
+const posts = require("./src/routes/post");
 /*const userRoutes = require('./src/routes/user');*/
 
 /*Trabajar con la extension client-rest */
@@ -18,7 +20,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
 console.log(`api/${API_VERSION}/`);
 app.use(`/api/${API_VERSION}/auth`, authRoutes);
-/*app.use(`/api/${API_VERSION}`, userRoutes);*/
 app.use(`/api/${API_VERSION}/departamentoMunicipio`, deptoMpioRoutes);
+app.use(`/api/${API_VERSION}/categories`, categories);
+app.use(`/api/${API_VERSION}/posts`, posts);
 
 module.exports = app;

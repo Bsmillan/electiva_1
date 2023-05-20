@@ -10,7 +10,6 @@ const {
 } = require("./constants");
 
 const PORT = 3200;
-app.get(`/api/${API_VERSION}/auth`, (req, res) => res.send("Holi"));
 console.log(`mongodb+srv://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/${DB_NAME}`);
 mongoose
   .connect(`mongodb+srv://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/${DB_NAME}`, {
@@ -29,5 +28,5 @@ mongoose
     });
   })
   .catch((error) => {
-    console.error("Error conectando a la base de datos")
+    console.error("Error conectando a la base de datos");
   });
